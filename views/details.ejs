@@ -1,0 +1,28 @@
+<%- include('includes/layout'); %>
+
+<!--<div class="bg-primary">-->
+    <div class="container">
+      <div class="row">
+		 <div class="col-lg-8">
+          <div class="card" >
+            <div class="card-header bg-primary">Book Name: <%= result.book_name %></div>
+            <div class="card-body">
+              <h4>Author: <%= result.author %></h4>
+              <p>Description: <%= result.summary %></p>
+              <h6>ISBN: <%= result.isbn %></h6>
+              <span>Category: <%= result.category %></span>
+            </div>
+            <div class="card-footer">
+            <form method="post" action="/<%= result.id %>/delete?_method=DELETE"></form>
+            <a href="javascript:history.back();" type="button" class="btn btn-dark">Go Back</a>
+            <a href="/<%= result.id %>/edit" type="button" class="btn btn-warning">Edit</a>
+            <a href="/<%= result.id %>/delete" type="button" class="btn btn-danger">Delete</a>
+            <button type="submit" class="btn btn-primary float-right">Buy Now</button>
+          </form>
+          </div>
+          </div>
+         </div>
+         </div>
+         </div>
+         <%- include('includes/footer'); %>
+         

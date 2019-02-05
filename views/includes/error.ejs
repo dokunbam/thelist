@@ -1,0 +1,9 @@
+<% for(var errors of err) {  %>
+    <div class="alert alert-warning alert-dismissable fade show" role="alert">
+        <%= errors.msg %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times</span>
+        </button>
+      </div>
+    
+    <% }%>

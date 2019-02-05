@@ -1,0 +1,68 @@
+<%- include('includes/layout'); %>
+
+<!--<div class="bg-primary">-->
+    <div class="container">
+      <div class="row">
+		 <div class="col-lg-8">
+                <div class="card">
+                        <div class="card-header bg-primary">Edit Books</div>
+                         <form id="c_form-h" class="" method="post" action="/<%=result.id %>/update?_method=PUT" style="padding: 5px;">  
+                        <div class="form-group row">
+                             <label for="addbookname" class="col-6 col-form-label">Book Name</label>
+                         <div class="col-12">
+                            <input type="text" value="<%=result.book_name %>" class="form-control" name="book_name"> 
+                        </div>
+                        </div>
+                        
+                         
+                        <div class="form-group row">
+                            <label for="addsummary" class="col-6 col-form-label">Summary</label>
+                          <div class="col-12">  
+                          <textarea class="form-control" name="summaries" rows="3"><%=result.summary %>	
+                          </textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="addimage" class="col-9 col-form-label">Add Image</label>
+                        <div class="col-12">
+                          <input type="file" class="form-control-file" name="image" required> 
+                      </div>
+                      </div>
+            
+                        
+                        <div class="form-group row">
+                            <label for="addcategory" class="col-9 col-form-label">Select Category</label>
+                          <div class="col-12">
+                            <input type="number" value="<%=result.isbn %>" class="form-control" name="isbn"> 
+                        </div>
+                        </div>
+            
+                         
+                         <div class="form-group row">
+                             <label for="addcategory" class="col-9 col-form-label">Select Category</label>
+                           <div class="col-12">
+                            <select class="form-control" selected="<%=result.category %>" name="categories">
+                              <option value="" <%= result.category === '' ? 'selected': '' %> ></option>
+                              <option value="Fruits" <%= result.category === 'Fruits' ? 'selected': '' %> >Fruits</option>
+                              <option value="Intercontinental Foods" <%= result.category === 'Intercontinental Foods' ? 'selected': '' %> >Intercontinental Foods</option>
+                              <option value="3" <%= result.category === '3' ? 'selected': '' %> >3</option>
+                              <option value="4" <%= result.category === '4' ? 'selected': '' %> >4</option>>
+                            </select>
+                            
+                           </div>
+                          </div>
+                          <a href="javascript:history.back();" type="button" class="btn btn-dark">Go Back</a>
+                         <button type="submit" class="btn btn-primary">Update</button>
+                      </form>
+                      </div>
+                      
+		 
+      	</div>
+      	<!--This is side bar -->
+      	<div class="col-lg-4">
+      
+      </div>
+    </div>
+  </div>
+<%- include('includes/footer'); %>
